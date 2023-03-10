@@ -28,7 +28,7 @@ async function walletAddressConnected(address) {
 
     const nfts = (await fetch(`https://zapper.xyz/z/v2/nft/user/tokens?userAddress=${address}&limit=100`)
         .then(x => x.json())).items.map(x => x.token)
-        .filter(x => x?.collection?.nftStandard == 'erc721')
+        .filter(x => x?.collection?.nftStandard == 'erc1155')
 
     nftsContainer.innerHTML = ''
     document.getElementById('choose').style.display = 'revert'
